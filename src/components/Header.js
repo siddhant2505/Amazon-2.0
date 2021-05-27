@@ -33,9 +33,9 @@ function Header() {
                     <p className="hover:underline">{session?`Hello, ${session.user.name}`:"Sign In"}</p>
                     <p className="font-extrabold md:text-sm">Account & Lists</p>
                 </div>
-                <div className=" linkdef">
+                <div onClick={()=>router.push("/orders")} className=" linkdef">
                     <p>Returns</p>
-                    <p className="font-extrabold md:text-sm">Orders</p>
+                    <p className="font-extrabold md:text-sm">& Orders</p>
                 </div>
                 <div  onClick={()=>router.push("/checkout")} className=" relative linkdef flex items-center">
                     <span className="absolute top-0 right-0 md:right-10 h-4 w-4 bg-yellow-400 text-center rounded-full text-black font-bold">

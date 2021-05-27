@@ -3,9 +3,11 @@ import Image from "next/image"
 import { StarIcon } from '@heroicons/react/solid'
 import Currency from "react-currency-formatter"
 import { removeFromBasket } from '../slices/basketSlice';
+import { useDispatch } from 'react-redux';
 
 function CheckoutProduct({id,title,price,rating,description,category,image,hasPrime}) {
     const dispatch= useDispatch();
+    
     
     const addItemToBasket=()=>{
         const product ={
@@ -40,7 +42,12 @@ function CheckoutProduct({id,title,price,rating,description,category,image,hasPr
             </div>
             {/* Right add/remove button */}
             <div className="flex flex-col space-y-2 my-auto justify-self-end">
-                <button onClick={addItemToBasket} className="button">Add to Basket</button>
+                <div className="flex flex-row justify-self-end">
+                <button onClick={addItemToBasket} className="button px-3 font-bold">+</button>
+                <span className="mt-1 mx-4 text-l">Quantity: 0</span>
+                <button onClick={addItemToBasket} className="button px-4 font-bold">-</button>
+                
+                </div>
                 <button onClick={removeItemFromBasket} className="button">Remove to Basket</button>
             </div>
             
