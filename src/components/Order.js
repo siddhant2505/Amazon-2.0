@@ -3,6 +3,7 @@ import moment from "moment"
 import Currency from "react-currency-formatter";
 import { CurrencyEuroIcon } from '@heroicons/react/solid';
 function Order({id,amount, amountShipping,items,timestamp,images}) {
+    const quantities=items.reduce((total,item)=>total+item.quantity,0);
     return (
         <div className="relative border rounded-md">
             <div className="flex items-center space-x-10 p-5 bg-gray-100 text-sm text-gray-600">
@@ -19,7 +20,7 @@ function Order({id,amount, amountShipping,items,timestamp,images}) {
                     </p>
                 </div>
                 <p className="flex-1 text-xs text-right text-blue-500  whitespace-nowrap sm:text-xl self-end">
-                    {items.length} items
+                    {quantities} items
                 </p>
 
                 <p className="absolute top-2 right-2 w-40 lg:w-72 truncate text-xs whitespace-nowrap">

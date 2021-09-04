@@ -11,10 +11,11 @@ function Product({id,title,description,category,image,price}) {
     
     const [rating]=useState(Math.floor(Math.random()*(5))+1);
     const [hasPrime]=useState(Math.random()<0.5);
+    const quantity=1;
     
     const addItemToBasket=()=>{
         const product ={
-            id,title,price,description,category,image,hasPrime,rating
+            id,title,price,description,category,image,hasPrime,rating,quantity
         };
         //Sending the product as an action to the REDUX store... the basket slice
         dispatch(addToBasket(product));

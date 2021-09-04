@@ -8,7 +8,7 @@ function ProductFeed({products}) {
             {products.
             slice(0,4)
             .map(({id,title,description,category,image,price})=>(
-        <Product key={id} title={title} description={description} price={price} category={category} image={image}/>
+        <Product key={id} id={id} title={title} description={description} price={price} category={category} image={image}/>
       ))}
       <img className="md:col-span-full" src="https://links.papareact.com/dyz" alt="subbanner"/>
      <div className="md:col-span-2">

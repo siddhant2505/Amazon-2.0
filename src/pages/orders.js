@@ -7,6 +7,7 @@ import { getSession,useSession } from 'next-auth/client'
 
 function orders({orders}) {
     const [session]=useSession();
+    
 
     return (
         <div>
